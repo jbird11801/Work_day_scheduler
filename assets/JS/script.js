@@ -14,6 +14,39 @@ $(function () {
 
   var MilitaryTime = $('#TimeStyle');
 
+  var MilitaryTimeBoolLS = false;
+
+  var DayContainer = $(".container-lg")
+
+  
+  var dayHourTextLs = 
+    [ ,
+     ,
+     ,
+     , 
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+     ,
+    
+    ] 
+
+
   var dayHours = 
     [$("#hour-1") ,
     $("#hour-2") ,
@@ -57,7 +90,7 @@ $(function () {
     
     if(Style === true){
   
-      for(i = 0; i < dayHours.length ; i++){
+      for(var i = 0; i < dayHours.length ; i++){
   
         if(i < 9){
   
@@ -81,7 +114,7 @@ $(function () {
   
     {
   
-      for(i = 0; i < dayHours.length ; i++){
+      for( var i = 0; i < dayHours.length ; i++){
   
         if(i > 11){
   
@@ -105,7 +138,7 @@ $(function () {
 
   //sets default time style on page load 
 
-  sideTimeMt(false);
+  sideTimeMt(MilitaryTimeBoolLS);
 
 // if the checkbox is clicked change the time style
 
@@ -115,6 +148,10 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
 
    sideTimeMt(true);
 
+   MilitaryTimeBoolLS = true;
+
+   localStorage.setItem("MilitaryTimeBoolLS" , JSON.stringify(MilitaryTimeBoolLS));
+
   }
 
   else
@@ -123,6 +160,10 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
 
     sideTimeMt(false);
 
+    MilitaryTimeBoolLS = false;
+
+    localStorage.setItem("MilitaryTimeBoolLS" , JSON.stringify(MilitaryTimeBoolLS));
+
   }
 
 });
@@ -130,7 +171,7 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
   //styles the past
 
 
-  for(i = 0; i < CurrentHour; i++){
+  for(var i = 0; i < CurrentHour; i++){
 
     dayHours[i].addClass("row time-block past")
 
@@ -142,8 +183,8 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
 
   //styles the future
 
-  for(i = CurrentHour + 1; i < dayHours.length ; i++){
-    console.log(CurrentHour)
+  for(var i = CurrentHour + 1; i < dayHours.length ; i++){
+    
     dayHours[i].addClass("row time-block future")
 
   }
@@ -201,7 +242,8 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
 
 
   }*/
-  
+
+  //
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -209,6 +251,36 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
+
+  DayContainer.on('click' , function(event){
+
+    var selectedSave = event.target;
+    
+    if($(selectedSave).hasClass("saveBtn") === true){
+
+      var selectedSaveParentIndex;
+
+      for(var i = 0 ; i < dayHours.length ; i++) {
+
+        if(dayHours[i].attr("id")===$(selectedSave).parent().attr("id")){
+
+          selectedSaveParentIndex = i;
+
+        }
+
+      }
+
+      dayHourTextLs[selectedSaveParentIndex] = dayHours[selectedSaveParentIndex].find("textarea").val();
+
+      localStorage.setItem("dayHourTextLs" , JSON.stringify(dayHourTextLs));
+
+    }
+
+  });
+
+
+
+
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id

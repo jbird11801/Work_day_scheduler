@@ -42,6 +42,14 @@ how i made the military time checkbox https://www.w3schools.com/howto/howto_css_
 
 how i made the checkbox work in javascript specificly .is thank you @Bhanu Krishnan ![Image of post used](assets/images/Refrence.PNG) https://stackoverflow.com/questions/901712/how-do-i-check-whether-a-checkbox-is-checked-in-jquery
 
+how i learned about this in a click listener functionhttps://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+How i learned about.hasClass https://api.jquery.com/hasclass/ https://www.w3schools.com/jquery/html_hasclass.asp
+
+how i learned about .parent https://api.jquery.com/parent/
+
+how i l;aerned how to get the id of a element in the js filehttps://stackoverflow.com/questions/3239598/how-can-i-get-the-id-of-an-element-using-jquery
+
 List your collaborators, if any, with links to their GitHub profiles.
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
