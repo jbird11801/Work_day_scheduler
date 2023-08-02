@@ -34,6 +34,14 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 Used to make the read me file https://courses.bootcampspot.com/courses/3906/pages/3-dot-5-3-create-a-professional-project-readme?module_item_id=885925
 
+how i figured out jqury childeren / find https://api.jquery.com/children/ https://api.jquery.com/find/
+
+dayjs format https://day.js.org/docs/en/display/format
+
+how i made the military time checkbox https://www.w3schools.com/howto/howto_css_switch.asp
+
+how i made the checkbox work in javascript specificly .is thank you @Bhanu Krishnan ![Image of post used](assets/images/Refrence.PNG) https://stackoverflow.com/questions/901712/how-do-i-check-whether-a-checkbox-is-checked-in-jquery
+
 List your collaborators, if any, with links to their GitHub profiles.
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
