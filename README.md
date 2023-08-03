@@ -1,5 +1,7 @@
 # Work_day_scheduler
 
+link to live site : https://jbird11801.github.io/Work_day_scheduler/
+
 ## Description
 
 I loved this project and am going to use it every day to plot out my secdual. I added a full day rather than a 9 to 5 as i dont work only those hours and my scdual is really felxable so a full day made more sense, but 9 - 5 is in a full day so i think that its ok just extra. I also added a way to change it to military time as it allows me to swap as need if people primaraly use that. Overall i think that was my favrite part was making it dynamic so evryone can use this.
