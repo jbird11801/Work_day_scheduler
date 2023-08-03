@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  // TODO: Add code to display the current date in the header of the page.
 
   //globalish variables
 
@@ -13,39 +12,6 @@ $(function () {
   var CurrentHour = currentDate.format('H') - 1;
 
   var MilitaryTime = $('#TimeStyle');
-
-  var MilitaryTimeBoolLS = false;
-
-  var DayContainer = $(".container-lg")
-
-  
-  var dayHourTextLs = 
-    [ ,
-     ,
-     ,
-     , 
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-     ,
-    
-    ] 
-
 
   var dayHours = 
     [$("#hour-1") ,
@@ -72,10 +38,51 @@ $(function () {
     $("#hour-22") ,
     $("#hour-23") ,
     $("#hour-24")
+    ] ;
+
+  var DayContainer = $(".container-lg");
+
+  //variables to assist with local storage stuff
+  
+  var dayHourText = 
+    [ "",
+     "",
+     "",
+     "", 
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
     ] 
 
-  dateHeaderEl.text(currentDate.format('MMM D, YYYY'));
+    var MilitaryTimeBool = false;
 
+  // inits local storage variables
+
+  var MilitaryTimeBoolLS;
+
+  var dayHourTextLs;
+    // TODO: Add code to display the current date in the header of the page.
+
+      //sets the header date
+
+  dateHeaderEl.text(currentDate.format('MMM D, YYYY'));
 
   //
   // TODO: Add code to apply the past, present, or future class to each time
@@ -138,7 +145,21 @@ $(function () {
 
   //sets default time style on page load 
 
+  MilitaryTimeBoolLS = JSON.parse(localStorage.getItem("MilitaryTimeBoolLS"));
+
+  if(MilitaryTimeBoolLS !== null){
+
   sideTimeMt(MilitaryTimeBoolLS);
+
+  MilitaryTime.prop("checked" , MilitaryTimeBoolLS);
+
+  }
+
+  else {
+
+    sideTimeMt(MilitaryTimeBool);
+
+  }
 
 // if the checkbox is clicked change the time style
 
@@ -169,7 +190,6 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
 });
 
   //styles the past
-
 
   for(var i = 0; i < CurrentHour; i++){
 
@@ -252,6 +272,8 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
   // useful when saving the description in local storage?
   //
 
+  // on click saves text to ls
+
   DayContainer.on('click' , function(event){
 
     var selectedSave = event.target;
@@ -270,19 +292,44 @@ MilitaryTime.on('click' , function(){ // if you want military time check the box
 
       }
 
-      dayHourTextLs[selectedSaveParentIndex] = dayHours[selectedSaveParentIndex].find("textarea").val();
+      dayHourTextLs = JSON.parse(localStorage.getItem("dayHourTextLs"));
 
-      localStorage.setItem("dayHourTextLs" , JSON.stringify(dayHourTextLs));
+      if (dayHourTextLs !== null){
+
+        dayHourTextLs[selectedSaveParentIndex] = dayHours[selectedSaveParentIndex].find("textarea").val();
+
+        localStorage.setItem("dayHourTextLs" , JSON.stringify(dayHourTextLs));
+
+      }
+
+      else{
+
+        dayHourText[selectedSaveParentIndex] = dayHours[selectedSaveParentIndex].find("textarea").val();
+
+        localStorage.setItem("dayHourTextLs" , JSON.stringify(dayHourText));
+
+      }
 
     }
 
   });
 
-
-
-
-
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+
+  //gets the array from local storage on load
+
+  dayHourTextLs = JSON.parse(localStorage.getItem("dayHourTextLs"));
+
+  if (dayHourTextLs !== null){
+    
+    for(i = 0 ; i <dayHours.length; i++){
+
+      dayHours[i].find("textarea").text(dayHourTextLs[i]);
+
+    }
+
+  }
+
 });
