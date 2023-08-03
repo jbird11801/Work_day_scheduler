@@ -2,33 +2,15 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+I loved this project and am going to use it every day to plot out my secdual. I added a full day rather than a 9 to 5 as i dont work only those hours and my scdual is really felxable so a full day made more sense, but 9 - 5 is in a full day so i think that its ok just extra. I also added a way to change it to military time as it allows me to swap as need if people primaraly use that. Overall i think that was my favrite part was making it dynamic so evryone can use this.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Input the events that are on the day to day to figure out you dayly work scedual. It contains a full day as to allow you to plot out your day. No matter what scedual you have or work day your faceing.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+click the save button after wrighting out your event to save that text to that spot ![immage of a hour segment on the web page](assets/images/Save.PNG)
 
-![alt text](assets/images/screenshot.png)
+also be sure to select what time you prefer military time or normal time simply make sure the box is checked for military time ![image of the military time checkbox](assets/images/Military.PNG)
 
 ## Credits
 
@@ -48,36 +30,8 @@ How i learned about.hasClass https://api.jquery.com/hasclass/ https://www.w3scho
 
 how i learned about .parent https://api.jquery.com/parent/
 
-how i l;aerned how to get the id of a element in the js filehttps://stackoverflow.com/questions/3239598/how-can-i-get-the-id-of-an-element-using-jquery
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+how i learned how to get the id of a element in the js file https://stackoverflow.com/questions/3239598/how-can-i-get-the-id-of-an-element-using-jquery
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+Please refrence licence file
